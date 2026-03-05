@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Golden Wood Furniture – Enugu</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:#FAF5EC;color:#2C1810;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(26,15,6,0.96);display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:58px;border-bottom:1px solid rgba(201,146,42,0.2)}
+.logo{font-family:'Playfair Display',serif;font-size:1.2rem;color:#E8B84B}.logo span{color:#fff}
+.nav-links{display:flex;gap:1rem}
+.nav-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.75rem;font-weight:500;letter-spacing:0.05em;text-transform:uppercase}
+.nav-cta{background:#C9922A!important;color:#1A0F06!important;padding:6px 12px;border-radius:4px;font-weight:700!important}
+
+/* HERO */
+#hero{min-height:100vh;background:linear-gradient(160deg,rgba(26,15,6,0.93) 0%,rgba(61,36,8,0.82) 100%),url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&q=80') center/cover no-repeat;padding:80px 5% 60px;display:flex;flex-direction:column;gap:2rem}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(201,146,42,0.18);border:1px solid rgba(201,146,42,0.4);border-radius:50px;padding:5px 14px;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:#E8B84B;margin-bottom:1rem}
+.hero-text{color:#fff}
+.hero-text h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,9vw,4rem);font-weight:900;line-height:1.1;margin-bottom:1rem}
+.hero-text h1 em{font-style:italic;color:#E8B84B}
+.hero-text p{font-size:0.97rem;color:rgba(255,255,255,0.7);line-height:1.7;margin-bottom:1.5rem}
+.stats{display:flex;gap:2rem}
+.stat-num{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:#E8B84B;display:block}
+.stat-lbl{font-size:0.7rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.06em}
+
+/* FORM */
+.form-box{background:#fff;border-radius:12px;padding:1.6rem;box-shadow:0 20px 60px rgba(0,0,0,0.35)}
+.form-box h3{font-family:'Playfair Display',serif;font-size:1.3rem;color:#1A0F06;margin-bottom:0.3rem}
+.form-box>p{color:#8B6B55;font-size:0.83rem;margin-bottom:1.2rem}
+.fg{margin-bottom:0.85rem}
+.fg label{display:block;font-size:0.7rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:#6B3A1F;margin-bottom:4px}
+.fg input,.fg select,.fg textarea{width:100%;padding:10px 12px;border:1.5px solid #E0D0C0;border-radius:7px;font-family:'Outfit',sans-serif;font-size:0.9rem;color:#2C1810;background:#FDFAF6;outline:none}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:#C9922A}
+.fg textarea{resize:vertical;min-height:75px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem}
+.btn-submit{width:100%;padding:13px;background:linear-gradient(135deg,#C9922A,#E8B84B);color:#1A0F06;font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:700;border:none;border-radius:7px;cursor:pointer;margin-top:0.3rem}
+.form-note{text-align:center;font-size:0.7rem;color:#8B6B55;margin-top:0.7rem}
+
+/* SECTIONS */
+.sec{padding:70px 5%}
+.sec-tag{display:inline-block;font-size:0.7rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#C9922A;margin-bottom:0.5rem}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,6vw,2.8rem);font-weight:900;line-height:1.15;margin-bottom:0.7rem}
+.sec-sub{font-size:0.95rem;color:#8B6B55;line-height:1.7;max-width:560px;margin-bottom:0.5rem}
+.divider{width:50px;height:3px;background:linear-gradient(90deg,#C9922A,#E8B84B);border-radius:2px;margin:1rem 0 2rem}
+
+/* SERVICES */
+#services{background:#1A0F06}
+#services .sec-title{color:#fff}
+#services .sec-sub{color:rgba(255,255,255,0.55)}
+#services .sec-tag{color:#E8B84B}
+.srv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0.9rem;margin-top:0.5rem}
+.srv-card{background:rgba(255,255,255,0.04);border:1px solid rgba(201,146,42,0.15);border-radius:10px;padding:1.2rem 1rem}
+.srv-icon{font-size:1.5rem;margin-bottom:0.6rem;display:block}
+.srv-card h4{font-family:'Playfair Display',serif;font-size:0.9rem;color:#fff;margin-bottom:0.25rem}
+.srv-card p{font-size:0.78rem;color:rgba(255,255,255,0.45);line-height:1.5}
+
+/* WHY US */
+#whyus{background:#FAF5EC}
+.feat-list{display:flex;flex-direction:column;gap:0.9rem;margin-top:0.5rem}
+.feat{display:flex;gap:1rem;align-items:flex-start;padding:1.1rem;border-radius:10px;background:#fff;border:1px solid #EDE0CE}
+.feat-icon{width:40px;height:40px;background:linear-gradient(135deg,#C9922A,#E8B84B);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1.15rem;flex-shrink:0}
+.feat h4{font-weight:600;font-size:0.92rem;color:#1A0F06;margin-bottom:0.2rem}
+.feat p{font-size:0.8rem;color:#8B6B55;line-height:1.5}
+
+/* GALLERY */
+#gallery{background:#fff}
+.gal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0.7rem;margin-top:1.5rem}
+.gal-item{border-radius:8px;overflow:hidden;aspect-ratio:1}
+.gal-item:first-child{grid-column:span 2;aspect-ratio:16/9}
+.gal-item img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* ── PROJECTS ── */
+#projects{background:#FAF5EC}
+.proj-grid{display:grid;grid-template-columns:1fr;gap:1.2rem;margin-top:1rem}
+.proj-card{background:#fff;border-radius:12px;overflow:hidden;border:1px solid #EDE0CE;box-shadow:0 4px 20px rgba(0,0,0,0.06)}
+.proj-img{width:100%;height:200px;object-fit:cover;display:block}
+.proj-body{padding:1.2rem}
+.proj-tag{display:inline-block;background:rgba(201,146,42,0.12);color:#C9922A;font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:3px 10px;border-radius:50px;margin-bottom:0.6rem}
+.proj-body h4{font-family:'Playfair Display',serif;font-size:1.05rem;color:#1A0F06;margin-bottom:0.4rem}
+.proj-body p{font-size:0.83rem;color:#8B6B55;line-height:1.6}
+.proj-meta{display:flex;gap:1rem;margin-top:0.8rem;padding-top:0.8rem;border-top:1px solid #F0E4D4}
+.proj-meta span{font-size:0.75rem;color:#B08060;display:flex;align-items:center;gap:4px}
+
+/* ── REVIEWS ── */
+#reviews{background:#1A0F06}
+#reviews .sec-title{color:#fff}
+#reviews .sec-sub{color:rgba(255,255,255,0.55)}
+#reviews .sec-tag{color:#E8B84B}
+.reviews-grid{display:grid;grid-template-columns:1fr;gap:1.1rem;margin-top:1rem}
+.review-card{background:rgba(255,255,255,0.05);border:1px solid rgba(201,146,42,0.2);border-radius:12px;padding:1.4rem}
+.review-stars{color:#E8B84B;font-size:1rem;letter-spacing:2px;margin-bottom:0.7rem}
+.review-text{font-size:0.88rem;color:rgba(255,255,255,0.75);line-height:1.75;font-style:italic;margin-bottom:1rem}
+.review-author{display:flex;align-items:center;gap:0.8rem}
+.review-avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#C9922A,#E8B84B);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.review-name{font-weight:600;font-size:0.9rem;color:#fff}
+.review-role{font-size:0.75rem;color:rgba(255,255,255,0.45)}
+.review-badge{display:inline-block;background:rgba(201,146,42,0.15);border:1px solid rgba(201,146,42,0.3);color:#E8B84B;font-size:0.65rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:2px 8px;border-radius:50px;margin-top:3px}
+
+/* ── GOOGLE MAP ── */
+#location{background:#fff}
+#location .sec-title{color:#1A0F06}
+.map-wrap{margin-top:1.5rem;border-radius:14px;overflow:hidden;border:2px solid #EDE0CE;box-shadow:0 8px 30px rgba(0,0,0,0.1)}
+.map-wrap iframe{width:100%;height:320px;display:block;border:none}
+.map-info{display:grid;grid-template-columns:1fr 1fr;gap:0.9rem;margin-top:1.1rem}
+.map-info-card{background:#FAF5EC;border:1px solid #EDE0CE;border-radius:10px;padding:1rem;display:flex;gap:0.8rem;align-items:flex-start}
+.map-info-icon{font-size:1.3rem;flex-shrink:0}
+.map-info-card h5{font-weight:600;font-size:0.85rem;color:#1A0F06;margin-bottom:0.2rem}
+.map-info-card p{font-size:0.78rem;color:#8B6B55;line-height:1.5}
+
+/* FAQ */
+#faq{background:#1A0F06}
+#faq .sec-title{color:#fff}
+#faq .sec-sub{color:rgba(255,255,255,0.55)}
+#faq .sec-tag{color:#E8B84B}
+.faq-list{margin-top:1.5rem}
+.faq-item{border-bottom:1px solid rgba(201,146,42,0.2)}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 0;cursor:pointer;gap:1rem}
+.faq-q h4{font-family:'Playfair Display',serif;font-size:0.93rem;color:#fff;font-weight:600;line-height:1.4}
+.faq-tog{width:28px;height:28px;background:rgba(201,146,42,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#E8B84B;font-size:1.3rem;flex-shrink:0;transition:background 0.2s,transform 0.3s;line-height:1}
+.faq-item.open .faq-tog{background:#C9922A;color:#1A0F06;transform:rotate(45deg)}
+.faq-ans{max-height:0;overflow:hidden;transition:max-height 0.4s ease}
+.faq-item.open .faq-ans{max-height:250px}
+.faq-ans p{font-size:0.88rem;color:rgba(255,255,255,0.6);line-height:1.75;padding-bottom:1.1rem}
+
+/* CTA */
+#cta{background:linear-gradient(135deg,#3D2408,#1A0F06);text-align:center;padding:80px 5%;position:relative;overflow:hidden}
+#cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 100%,rgba(201,146,42,0.2) 0%,transparent 70%);pointer-events:none}
+#cta>*{position:relative;z-index:1}
+#cta .sec-title{color:#fff}
+#cta .sec-tag{color:#E8B84B}
+#cta .sec-sub{color:rgba(255,255,255,0.6);margin:0 auto 2rem}
+.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:6px;padding:13px 26px;background:linear-gradient(135deg,#C9922A,#E8B84B);color:#1A0F06;font-weight:700;font-size:0.93rem;text-decoration:none;border-radius:7px}
+.btn-green{display:inline-flex;align-items:center;gap:6px;padding:13px 26px;background:#25D366;color:#fff;font-weight:700;font-size:0.93rem;text-decoration:none;border-radius:7px}
+.btn-outline{display:inline-flex;align-items:center;gap:6px;padding:13px 26px;border:2px solid rgba(201,146,42,0.45);color:#E8B84B;font-weight:600;font-size:0.93rem;text-decoration:none;border-radius:7px}
+.cta-addr{color:rgba(255,255,255,0.35);font-size:0.78rem;margin-top:1.8rem}
+
+/* FOOTER */
+footer{background:#0D0702;color:rgba(255,255,255,0.4);padding:2rem 5%;text-align:center;font-size:0.8rem;border-top:1px solid rgba(201,146,42,0.1)}
+.foot-logo{font-family:'Playfair Display',serif;font-size:1.1rem;color:#E8B84B;margin-bottom:0.5rem}
+
+/* WHATSAPP FLOAT BUTTON */
+.wa-float{position:fixed;bottom:24px;right:20px;z-index:9998;background:#25D366;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 25px rgba(37,211,102,0.45);text-decoration:none;animation:waPulse 2s infinite}
+.wa-float svg{width:30px;height:30px;fill:#fff}
+@keyframes waPulse{0%,100%{box-shadow:0 6px 25px rgba(37,211,102,0.45)}50%{box-shadow:0 6px 35px rgba(37,211,102,0.75)}}
+.wa-tooltip{position:absolute;right:68px;background:#1A0F06;color:#fff;font-size:0.78rem;font-weight:600;white-space:nowrap;padding:6px 12px;border-radius:6px;opacity:0;pointer-events:none;transition:opacity 0.2s}
+.wa-float:hover .wa-tooltip{opacity:1}
+
+/* TOAST */
+#toast{display:none;position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#C9922A;color:#1A0F06;padding:12px 24px;border-radius:50px;font-weight:700;font-size:0.88rem;z-index:9999;box-shadow:0 8px 30px rgba(0,0,0,0.3)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.vis{opacity:1;transform:translateY(0)}
+
+@media(max-width:400px){
+  .frow{grid-template-columns:1fr}
+  .nav-links a:not(.nav-cta){display:none}
+  .map-info{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Golden<span>Wood</span></div>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#cta" class="nav-cta">Quote</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-text reveal">
+    <div class="badge">✦ Enugu's Premier Furniture Makers</div>
+    <h1>Crafted With<br><em>Passion,</em> Built<br>To Last</h1>
+    <p>From custom cabinets to luxurious sofas — Golden Wood Furniture brings timeless craftsmanship to your home in Enugu State.</p>
+    <div class="stats">
+      <div><span class="stat-num">500+</span><span class="stat-lbl">Pieces Made</span></div>
+      <div><span class="stat-num">3.1K</span><span class="stat-lbl">Fans</span></div>
+      <div><span class="stat-num">14+</span><span class="stat-lbl">Services</span></div>
+    </div>
+  </div>
+
+  <div class="form-box reveal">
+    <h3>Get a Free Quote</h3>
+    <p>We'll get back to you within hours.</p>
+    <div class="frow">
+      <div class="fg"><label>Full Name</label><input id="fname" type="text" placeholder="Your name"></div>
+      <div class="fg"><label>Phone</label><input id="fphone" type="tel" placeholder="080X XXX XXXX"></div>
+    </div>
+    <div class="fg">
+      <label>Service Needed</label>
+      <select id="fservice">
+        <option value="">Select a service...</option>
+        <option>Cabinet Construction</option>
+        <option>Chair Construction</option>
+        <option>Couches / Sofas</option>
+        <option>Desk Construction</option>
+        <option>Dresser Construction</option>
+        <option>Furniture Design</option>
+        <option>Furniture Repairs</option>
+        <option>Shelving / Rack Construction</option>
+        <option>Table Construction</option>
+        <option>Painting & Wood Staining</option>
+        <option>Furniture Assembly</option>
+        <option>Delivery</option>
+      </select>
+    </div>
+    <div class="fg"><label>Message</label><textarea id="fmsg" placeholder="Describe what you need — dimensions, style, preferences..."></textarea></div>
+    <button class="btn-submit" onclick="submitForm()">Send Request →</button>
+    <p class="form-note">📍 2 Oba St, Ogui Road, Enugu &nbsp;·&nbsp; ☎ 09090907023</p>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="sec">
+  <div class="reveal">
+    <div class="sec-tag">What We Do</div>
+    <h2 class="sec-title">Our Craftsmanship<br>Services</h2>
+    <p class="sec-sub">Every service delivered with precision and authentic craftsmanship.</p>
+    <div class="divider"></div>
+  </div>
+  <div class="srv-grid">
+    <div class="srv-card reveal"><span class="srv-icon">🪵</span><h4>Cabinet Construction</h4><p>Custom kitchen & storage cabinets installed to perfection.</p></div>
+    <div class="srv-card reveal"><span class="srv-icon">🪑</span><h4>Chair Construction</h4><p>Dining, office & accent chairs — strong and stylish.</p></div>
+    <div class="srv-card reveal"><span class="srv-icon">🛋️</span><h4>Couches & Sofas</h4><p>Luxurious sofas custom-crafted for your space.</p></div>
+    <div class="srv-card reveal"><span class="srv-icon">🖥️</span><h4>Desk Construction</h4><p>Office & study desks built for long-lasting use.</p></div>
+    <div class="srv-card reveal"><span class="srv-icon">🪞</span><h4>Dresser Construction</h4><p>Elegant dressers & vanities with flawless finish.</p></div>
+    <div class="srv-card reveal"><span class="srv-icon">📐</span><h4>Furniture Design</h4><p>Bespoke design from concept to completion.</p></div>
+    <div class="srv-card reveal"><span class="srv-icon">🔧</span><h4>Furniture Repairs</h4><p>Restore worn furniture to its original glory.</p></div>
+    <div class="srv-card reveal"><span class="srv-icon">🗄️</span><h4>Shelving & Racks</h4><p>Wall shelves & display racks for any space.</p></div>
+    <div class="srv-card reveal"><span class="srv-icon">🍽️</span><h4>Table Construction</h4><p>Dining, coffee & side tables from finest wood.</p></div>
+    <div class="srv-card reveal"><span class="srv-icon">🎨</span><h4>Painting & Staining</h4><p>Expert finishing that protects and beautifies.</p></div>
+    <div class="srv-card reveal"><span class="srv-icon">🔨</span><h4>Furniture Assembly</h4><p>Professional, fast, hassle-free assembly.</p></div>
+    <div class="srv-card reveal"><span class="srv-icon">🚚</span><h4>Delivery</h4><p>Safe delivery right to your doorstep.</p></div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="whyus" class="sec">
+  <div class="reveal">
+    <div class="sec-tag">Why Choose Us</div>
+    <h2 class="sec-title">The Golden Wood<br>Difference</h2>
+    <p class="sec-sub">We craft experiences that transform spaces and stand the test of time.</p>
+    <div class="divider"></div>
+  </div>
+  <div class="feat-list">
+    <div class="feat reveal"><div class="feat-icon">🏆</div><div><h4>Master Craftsmen</h4><p>Skilled artisans with years of fine woodworking experience.</p></div></div>
+    <div class="feat reveal"><div class="feat-icon">🪵</div><div><h4>Premium Materials</h4><p>Finest quality wood for durability and beauty.</p></div></div>
+    <div class="feat reveal"><div class="feat-icon">📏</div><div><h4>100% Custom Made</h4><p>Tailored to your exact dimensions, style, and finish.</p></div></div>
+    <div class="feat reveal"><div class="feat-icon">⚡</div><div><h4>Reliable Turnaround</h4><p>Fast production timelines without cutting corners.</p></div></div>
+    <div class="feat reveal"><div class="feat-icon">🤝</div><div><h4>3,100+ Happy Customers</h4><p>Over 3.1K Facebook followers trust our work.</p></div></div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="sec" style="background:#fff">
+  <div class="reveal" style="text-align:center">
+    <div class="sec-tag">Our Work</div>
+    <h2 class="sec-title">Craftsmanship Gallery</h2>
+    <p class="sec-sub" style="margin:0 auto">A glimpse into the quality in every piece we create.</p>
+    <div class="divider" style="margin:1rem auto 0"></div>
+  </div>
+  <div class="gal-grid reveal">
+    <div class="gal-item"><img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80" alt="Luxury Sofa" loading="lazy"></div>
+    <div class="gal-item"><img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=400&q=80" alt="Dining Table" loading="lazy"></div>
+    <div class="gal-item"><img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=400&q=80" alt="Bedroom Set" loading="lazy"></div>
+    <div class="gal-item"><img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=400&q=80" alt="Kitchen Cabinet" loading="lazy"></div>
+    <div class="gal-item"><img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=400&q=80" alt="Accent Chair" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- ── PROJECTS ── -->
+<section id="projects" class="sec">
+  <div class="reveal">
+    <div class="sec-tag">What We've Built</div>
+    <h2 class="sec-title">Featured Projects</h2>
+    <p class="sec-sub">Real projects. Real transformations. Delivered right here in Enugu.</p>
+    <div class="divider"></div>
+  </div>
+  <div class="proj-grid">
+
+    <div class="proj-card reveal">
+      <img class="proj-img" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80" alt="Kitchen Remodel">
+      <div class="proj-body">
+        <span class="proj-tag">Kitchen Remodelling</span>
+        <h4>Full Kitchen Cabinet Overhaul — GRA Enugu</h4>
+        <p>A complete kitchen transformation for a family residence in GRA. We designed and installed custom floor-to-ceiling cabinets with mahogany finish, pull-out drawers, and soft-close hinges. The result was a sleek, functional kitchen that completely changed the home's feel.</p>
+        <div class="proj-meta">
+          <span>📍 GRA, Enugu</span>
+          <span>⏱ 3 weeks</span>
+          <span>⭐ 5/5</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-card reveal">
+      <img class="proj-img" src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" alt="Office Furniture">
+      <div class="proj-body">
+        <span class="proj-tag">Office Furnishing</span>
+        <h4>Complete Office Fit-Out — Independence Layout</h4>
+        <p>Commissioned by a law firm in Independence Layout, we built and installed 12 executive desks, a boardroom table, shelving units, and reception furniture — all in matching dark oak stain. Completed on schedule with zero defects.</p>
+        <div class="proj-meta">
+          <span>📍 Independence Layout</span>
+          <span>⏱ 2 weeks</span>
+          <span>⭐ 5/5</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-card reveal">
+      <img class="proj-img" src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80" alt="Living Room">
+      <div class="proj-body">
+        <span class="proj-tag">Living Room Set</span>
+        <h4>Custom Sofa & Entertainment Unit — Asata</h4>
+        <p>Designed an L-shaped sectional sofa with ottoman and a matching TV entertainment unit for a family in Asata. Custom dimensions, handpicked fabric, and solid wood legs. The family said it was "exactly what we dreamed of."</p>
+        <div class="proj-meta">
+          <span>📍 Asata, Enugu</span>
+          <span>⏱ 10 days</span>
+          <span>⭐ 5/5</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-card reveal">
+      <img class="proj-img" src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800&q=80" alt="Bedroom">
+      <div class="proj-body">
+        <span class="proj-tag">Bedroom Remodelling</span>
+        <h4>Master Bedroom Suite — New Haven</h4>
+        <p>Built a full master bedroom suite including a king-size bed frame with built-in storage, two bedside cabinets, a 6-door wardrobe, and matching dresser. All pieces in a warm walnut tone — elegant and timeless.</p>
+        <div class="proj-meta">
+          <span>📍 New Haven, Enugu</span>
+          <span>⏱ 3 weeks</span>
+          <span>⭐ 5/5</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-card reveal">
+      <img class="proj-img" src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=800&q=80" alt="Restaurant">
+      <div class="proj-body">
+        <span class="proj-tag">Commercial Project</span>
+        <h4>Restaurant Tables & Chairs — Trans Ekulu</h4>
+        <p>A popular restaurant in Trans Ekulu hired us to furnish their entire dining area. We crafted 20 dining tables and 80 matching chairs in a rustic hardwood finish. Delivered and installed within 4 weeks, on budget.</p>
+        <div class="proj-meta">
+          <span>📍 Trans Ekulu</span>
+          <span>⏱ 4 weeks</span>
+          <span>⭐ 5/5</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-card reveal">
+      <img class="proj-img" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80" alt="Study Room">
+      <div class="proj-body">
+        <span class="proj-tag">Study Room</span>
+        <h4>Home Library & Study — Achara Layout</h4>
+        <p>Designed a full home library with floor-to-ceiling bookshelves, a large reading desk, and a study chair for a professor in Achara Layout. Every shelf was custom-measured to fit his book collection perfectly.</p>
+        <div class="proj-meta">
+          <span>📍 Achara Layout</span>
+          <span>⏱ 2 weeks</span>
+          <span>⭐ 5/5</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── REVIEWS ── -->
+<section id="reviews" class="sec">
+  <div class="reveal">
+    <div class="sec-tag">What People Say</div>
+    <h2 class="sec-title">Real Reviews From<br>Enugu Residents</h2>
+    <p class="sec-sub">Trusted by homeowners, interior designers, and businesses across Enugu State.</p>
+    <div class="divider"></div>
+  </div>
+  <div class="reviews-grid">
+
+    <div class="review-card reveal">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"I invited Golden Wood Furniture to handle the full interior furnishing of a 5-bedroom duplex in GRA. Their craftsmanship was exceptional — every wardrobe, bed frame and cabinet was delivered exactly as designed. My client was absolutely thrilled. I will be recommending them for every project going forward."</p>
+      <div class="review-author">
+        <div class="review-avatar">👩🏾</div>
+        <div>
+          <div class="review-name">Chioma Okafor</div>
+          <div class="review-role">Interior Designer, Enugu</div>
+          <div class="review-badge">⭐ Verified Designer</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card reveal">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"As an interior designer, I have high standards. Golden Wood exceeded them. I brought them into a luxury apartment project at Independence Layout and they delivered 100% custom furniture — perfect dimensions, perfect finish. Zero complaints from my client. These guys are genuinely talented."</p>
+      <div class="review-author">
+        <div class="review-avatar">👨🏾</div>
+        <div>
+          <div class="review-name">Emeka Nweze</div>
+          <div class="review-role">Lead Interior Designer, ENU Spaces</div>
+          <div class="review-badge">⭐ Verified Designer</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card reveal">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"I contracted them to furnish my new home in New Haven. From the kitchen cabinets to the bedroom wardrobes — everything was top quality. They listened carefully to what I wanted and delivered beyond my expectations. My kitchen especially looks like it belongs in a magazine!"</p>
+      <div class="review-author">
+        <div class="review-avatar">👩🏾</div>
+        <div>
+          <div class="review-name">Adaeze Eze</div>
+          <div class="review-role">Homeowner, New Haven Enugu</div>
+          <div class="review-badge">✔ Verified Customer</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card reveal">
+      <div class="review-stars">★★★★☆</div>
+      <p class="review-text">"Very good work. I had my entire restaurant in Trans Ekulu furnished by Golden Wood — tables, chairs, bar stools and a reception counter. The quality is solid and durable. Customers keep complimenting the interior. Would definitely use them again for my second branch."</p>
+      <div class="review-author">
+        <div class="review-avatar">👨🏾</div>
+        <div>
+          <div class="review-name">Chukwudi Onah</div>
+          <div class="review-role">Restaurant Owner, Trans Ekulu</div>
+          <div class="review-badge">✔ Verified Customer</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card reveal">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"I was referred to Golden Wood by a friend and I'm so glad I called them. They built my home library exactly as I described — floor-to-ceiling shelves, a massive study desk and even a custom reading chair. The attention to detail is incredible. Truly craftsmen of the highest order."</p>
+      <div class="review-author">
+        <div class="review-avatar">👨🏾</div>
+        <div>
+          <div class="review-name">Prof. Ikenna Ugwu</div>
+          <div class="review-role">University Lecturer, Achara</div>
+          <div class="review-badge">✔ Verified Customer</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card reveal">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"I used Golden Wood for my office renovation in Independence Layout. They built all our desks, shelving and the boardroom table. Very professional team — they showed up on time every day and kept the workspace clean. The result is stunning. Our staff love the new office!"</p>
+      <div class="review-author">
+        <div class="review-avatar">👩🏾</div>
+        <div>
+          <div class="review-name">Ngozi Ani</div>
+          <div class="review-role">Business Owner, Enugu</div>
+          <div class="review-badge">✔ Verified Customer</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── GOOGLE MAP ── -->
+<section id="location" class="sec">
+  <div class="reveal">
+    <div class="sec-tag">Find Us</div>
+    <h2 class="sec-title">Visit Our Workshop</h2>
+    <p class="sec-sub">Come see our work in person. We're located right in the heart of Enugu.</p>
+    <div class="divider"></div>
+  </div>
+  <div class="map-wrap reveal">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.8!2d7.4986!3d6.4412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1044a3b4c0b0b0b1%3A0x0!2s2+Oba+St%2C+off+Ogui+Road%2C+Achara%2C+Enugu!5e0!3m2!1sen!2sng!4v1700000000000!5m2!1sen!2sng"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Golden Wood Furniture Location">
+    </iframe>
+  </div>
+  <div class="map-info reveal">
+    <div class="map-info-card">
+      <div class="map-info-icon">📍</div>
+      <div>
+        <h5>Address</h5>
+        <p>2 Oba Street, off Ogui Road, Achara, Enugu 400102, Enugu State</p>
+      </div>
+    </div>
+    <div class="map-info-card">
+      <div class="map-info-icon">🕐</div>
+      <div>
+        <h5>Opening Hours</h5>
+        <p>Monday – Saturday: 7:00 AM – 6:00 PM</p>
+      </div>
+    </div>
+    <div class="map-info-card">
+      <div class="map-info-icon">📞</div>
+      <div>
+        <h5>Call / WhatsApp</h5>
+        <p><a href="tel:09090907023" style="color:#C9922A;text-decoration:none;font-weight:600">09090907023</a></p>
+      </div>
+    </div>
+    <div class="map-info-card">
+      <div class="map-info-icon">📘</div>
+      <div>
+        <h5>Follow Us</h5>
+        <p><a href="https://facebook.com" target="_blank" style="color:#C9922A;text-decoration:none;font-weight:600">Golden Wood Furniture on Facebook</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="sec">
+  <div class="reveal">
+    <div class="sec-tag">Common Questions</div>
+    <h2 class="sec-title">Frequently Asked<br>Questions</h2>
+    <p class="sec-sub">Everything you need to know before working with us.</p>
+    <div class="divider"></div>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="toggleFaq(this)"><h4>How long does a custom furniture order take?</h4><div class="faq-tog">+</div></div>
+      <div class="faq-ans"><p>Simple items take 5–10 days; larger projects like bedroom sets or cabinets take 2–4 weeks. We'll give you a clear timeline when you order.</p></div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="toggleFaq(this)"><h4>Do you deliver outside Enugu?</h4><div class="faq-tog">+</div></div>
+      <div class="faq-ans"><p>Yes! We deliver to other states in Nigeria. Out-of-state delivery fees are quoted based on distance and item size.</p></div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="toggleFaq(this)"><h4>Can I bring my own design or photos?</h4><div class="faq-tog">+</div></div>
+      <div class="faq-ans"><p>Absolutely! Bring sketches, photos, or Pinterest boards. Our craftsmen will bring your exact vision to life.</p></div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="toggleFaq(this)"><h4>What types of wood do you use?</h4><div class="faq-tog">+</div></div>
+      <div class="faq-ans"><p>We work with mahogany, iroko, teak, oak, and engineered wood options for more budget-friendly pieces.</p></div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="toggleFaq(this)"><h4>Do you repair old furniture?</h4><div class="faq-tog">+</div></div>
+      <div class="faq-ans"><p>Yes! We offer full repair and restoration — re-upholstery, wood repairs, repainting, and staining. Send photos for a free estimate.</p></div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="toggleFaq(this)"><h4>How do I place an order?</h4><div class="faq-tog">+</div></div>
+      <div class="faq-ans"><p>Fill the form above, call/WhatsApp us at 09090907023, or visit us at 2 Oba St, off Ogui Road, Achara, Enugu. Open Mon–Sat 7am–6pm.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="sec-tag reveal">Ready to Transform Your Space?</div>
+  <h2 class="sec-title reveal" style="color:#fff;margin-bottom:0.8rem">Let's Build Something<br><em style="font-style:italic;color:#E8B84B">Beautiful Together</em></h2>
+  <p class="sec-sub reveal">Visit our workshop or contact us today. Your dream furniture is closer than you think.</p>
+  <div class="cta-btns reveal">
+    <a href="tel:09090907023" class="btn-gold">📞 Call Us Now</a>
+    <a href="https://wa.me/2349090907023?text=Hello%20Golden%20Wood%20Furniture!%20I%20would%20like%20to%20get%20a%20quote." target="_blank" class="btn-green">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp Us
+    </a>
+    <a href="https://facebook.com" target="_blank" class="btn-outline">💬 Facebook</a>
+  </div>
+  <p class="cta-addr reveal">📍 2 Oba St, off Ogui Road, Achara, Enugu 400102<br>Open Mon–Sat 7am–6pm</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-logo">Golden Wood Furniture</div>
+  <div>© 2024 Golden Wood Furniture · Enugu, Nigeria · 09090907023</div>
+</footer>
+
+<!-- WHATSAPP FLOAT BUTTON -->
+<a class="wa-float" href="https://wa.me/2349090907023?text=Hello%20Golden%20Wood%20Furniture!%20I%20would%20like%20to%20get%20a%20quote." target="_blank">
+  <span class="wa-tooltip">Chat on WhatsApp</span>
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<div id="toast">✅ Request sent! We'll call you shortly.</div>
+
+<script>
+function submitForm(){
+  var n=document.getElementById('fname').value;
+  var p=document.getElementById('fphone').value;
+  if(!n||!p){alert('Please enter your name and phone number.');return;}
+  document.getElementById('fname').value='';
+  document.getElementById('fphone').value='';
+  document.getElementById('fservice').value='';
+  document.getElementById('fmsg').value='';
+  var t=document.getElementById('toast');
+  t.style.display='block';
+  setTimeout(function(){t.style.display='none';},3000);
+}
+
+function toggleFaq(el){
+  var item=el.parentElement;
+  var isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
+  if(!isOpen)item.classList.add('open');
+}
+
+var obs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}
+  });
+},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
+</script>
+</body>
+</html>
